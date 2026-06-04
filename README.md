@@ -45,20 +45,31 @@ This project implements an automated machine learning (AutoML) framework for bre
 
 ## Usage
 
-To run the automated pipeline, execute the main training script:
+### Train and Save the Model
 
 ```bash
-python train.py
+jupyter notebook train.ipynb
 ```
 
-The script will:
+Run all notebook cells and ensure the final save step produces:
 
-1. Download the Wisconsin Breast Cancer Dataset from UCI Machine Learning Repository.
-2. Preprocess the data.
-3. Train and evaluate all models.
-4. Optimize hyperparameters using Optuna.
-5. Save the best performing pipeline to `cancer_classification_pipeline.pkl`.
-6. Log all results to `logs.log`.
+- `cancer_classification_pipeline.pkl`
+
+### Run the Streamlit Interface
+
+After the model file exists in the project root, start the interface with:
+
+```bash
+streamlit run app.py
+```
+
+The Streamlit app supports:
+
+1. Single sample prediction via a form.
+2. Batch prediction via CSV upload.
+3. Downloading batch prediction results as CSV.
+
+If `cancer_classification_pipeline.pkl` is missing, the app shows a guidance message and stops safely.
 
 ## Project Structure
 

@@ -3,3 +3,4 @@ numpy
 pycaret
 shap
 ucimlrepo
+streamlit
